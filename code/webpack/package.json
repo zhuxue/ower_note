@@ -1,0 +1,17 @@
+{
+  "name": "webpack_zhuxue",
+  "version": "1.0.0",
+  "description": "竹雪从此走向神之路的起端",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "竹雪",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^5.2.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.30.0",
+    "webpack-cli": "^4.6.0"
+  }
+}
