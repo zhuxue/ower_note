@@ -1,6 +1,6 @@
 require("./main.css")
 // 通过 CommonJS 规范导入 show 函数
-const show = require('./show');
+import show  from "./show";
 import {zx, es6_F} from "@/test"
 // 执行 show 函数
 show('Webpack');
