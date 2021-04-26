@@ -3,6 +3,8 @@ const glob = require('glob');
 
 const path = require('path');
 
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
 
 class Entries {
 
@@ -24,6 +26,27 @@ class Entries {
          });
          return entries ;
 
+    }
+
+    get_html_plugs() {
+
+      let entries = this.get_entries();
+
+      let html_plug = [];
+
+      Object.keys(entries).forEach(function (name) {
+         let plug =  new HtmlWebpackPlugin({
+            title:"伤心太平洋1",
+            template: path.join(__dirname, "../", '/public/index2.html'), // 指定 模板页面，将来会根据指定的页面路径，去生成内存中的 页面
+            chunks: [name], // 指定生成的页面的名称
+            filename: name + ".html",
+            hash:true,
+         })
+         html_plug.push(plug);
+      });
+
+      console.log(html_plug)
+      return html_plug ;
     }
 
 }

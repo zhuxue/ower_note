@@ -78,49 +78,15 @@ module.exports = {
     compress: true, // 判断是否启用gzip；
     port: 9000,
     host:'0.0.0.0',  // 配置目的能够在局域网中，网页能够被使用；
-    openPage:'index.html',
+    openPage:'zhuxue.html',
     open:true,  // 配置后是否打index.html;
     historyApiFallback:true, // 用于方便使用 html5使用 history 的单页面应用；这个应用要求任何应服务器在针对任何命中的路由时，都要返回一个对应的Html，浏览器端的 JavaScript 代码会从 URL 里解析出当前页面的状态，显示出对应的界面。
   },
   plugins:[
       // make sure to include the plugin for the magic
       new VueLoaderPlugin(),
-      new HtmlWebpackPlugin({
-           title:"伤心太平洋",
-            template: path.join(__dirname, '/public/index2.html'), // 指定 模板页面，将来会根据指定的页面路径，去生成内存中的 页面
-            chunks: ['page1'], // 指定生成的页面的名称
-            filename:"index.html"
-          }
+      ...new entries().get_html_plugs()
 
-      ),
-      new HtmlWebpackPlugin({
-            title:"伤心太平洋1",
-            template: path.join(__dirname, '/public/index2.html'), // 指定 模板页面，将来会根据指定的页面路径，去生成内存中的 页面
-            chunks: ['page2'], // 指定生成的页面的名称
-            filename:"page3.html",
-            hash:true,
-          }
-      ),
-        new HtmlWebpackPlugin({
-            title:"伤心太平洋2",
-            template: path.join(__dirname, '/public/index2.html'), // 指定 模板页面，将来会根据指定的页面路径，去生成内存中的 页面
-            chunks: ['page3'], // 指定生成的页面的名称
-            filename:"page4.html",
-            hash:true,
-          }
-
-
-      ),
-       new HtmlWebpackPlugin({
-            title:"伤心太平洋2",
-            template: path.join(__dirname, '/public/index2.html'), // 指定 模板页面，将来会根据指定的页面路径，去生成内存中的 页面
-            chunks: ['zhuxue'], // 指定生成的页面的名称
-            filename:"zhuxue.html",
-            hash:true,
-          }
-
-
-      )
 
   ], // 用于扩展webpack功能，// 目前这一块还不太熟悉；
 
