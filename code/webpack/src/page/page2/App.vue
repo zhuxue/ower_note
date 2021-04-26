@@ -15,7 +15,7 @@
   export default {
     data() {
       return {
-        msg: 'Hello,Webpack我是你大爷，去你大爷的'
+        msg: 'Hello,Webpack123'
       }
     }
   }
