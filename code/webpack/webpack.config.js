@@ -6,7 +6,6 @@ function resolve (dir) {
     return path.resolve(__dirname, dir)
 }
 
-
 const entries  = require("./build/entry")
 
 const entry_obj =  new entries().get_entries()
