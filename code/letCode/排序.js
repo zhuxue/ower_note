@@ -46,45 +46,58 @@ var merge = function ( intervals ) {
  */
 
 
-function QsortRec( list, l , r ) {
-
-  if( l > r) return ;
-
-
-  // 两个循环的下标点；
-  let left = l , right =  r;
-  console.log(left,right)
-
-  provid = list[right];   // 基准数；
-
-  while (left < right ){
-    while ( left < right && list[ left ] < provid){
-      left ++;
-    }
-    list[ right ]  = list[left];
-
-
-
-
-
-
-  }
-
-
-}
 
 function Qsort( array ) {
 
- QsortRec(array,0,array.length-1)
+    let op_array = array;
 
-  return array;
+    Qsort_opc(op_array,0,array.length - 1);
+
+    return op_array;
+
+}
+
+/***
+ * array: 要排序的数组，left: 要排序起始点位置， right: 排序终止点位置；
+ * @constructor
+ */
+function Qsort_opc( array, left, right ) {
+
+
+  if(left >= right ) return ;
+
+  let protem = array[left]; // 设置基准点位置
+
+  let i_left = left ,  i_right = right;
+
+  while (i_left < i_right){
+    while (array[i_right] > protem && i_left < i_right){
+      i_right--;
+    }
+    if( i_left < i_right ){
+        array[i_left] = array[i_right];
+    }
+
+    // 如果不有等于的话，很容易造成死循环；例子 【1，1，1，2，2】； 容易
+
+    while(array[i_left] <=   protem  && i_left < i_right){
+      i_left++;
+    }
+     if( i_left < i_right ){
+       array[i_right] = array[i_left];
+    }
+
+  }
+  array[i_left] = protem;
+  Qsort_opc(array,left,i_left-1);
+  Qsort_opc(array,i_left+1,right);
 
 }
 
 
 
 
-console.log( Qsort([5, 1, 4, 2, 9]) );
+console.log( Qsort([5, 1, 1, -1, 1]) );
 
 
 
