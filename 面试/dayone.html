@@ -5,6 +5,59 @@
     <title>Title</title>
 </head>
 <body>
+            <input type="checkbox" name="chk" value="1" />1
+            <input type="checkbox" name="chk" value="2" />2
+            <input type="checkbox" name="chk" value="3" />3
+            <input type="checkbox" name="chk" value="4" />4
+            <input type="checkbox" name="chk" value="5" />5
+            <input type="checkbox" name="chk" value="6" />6
+            <input type="checkbox" name="chk" value="7" />7
+            <input type="checkbox" name="chk" value="8" />8
+            <input type="checkbox" name="chk" value="9" />9
+
+
+
 
 </body>
+
+<script>
+  (function addEventListerer() {
+     document.getElementsByName("chk").forEach(function (item) {
+       item.addEventListener("click",function (event) {
+
+         console.log(event.target)
+
+       })
+
+
+     })
+   })();
+
+
+  var name = "the name ";
+
+  var obj = {
+    name : " 123 ",
+    get:function () {
+      return function () {
+        console.log(this.name)
+      }
+
+    }
+
+  }
+
+  obj.get()()
+  /***
+   * the name ;
+    */
+
+
+
+
+
+</script>
+
+
+
 </html>
