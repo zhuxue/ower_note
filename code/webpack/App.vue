@@ -1,4 +1,4 @@
-<!--渲染模版-->
+@/page/zhuxue/util/show@/page/zhuxue/util/show<!--渲染模版-->
 <template>
   <h1>{{ msg }}</h1>
 </template>

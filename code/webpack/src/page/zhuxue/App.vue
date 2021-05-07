@@ -28,7 +28,6 @@
 
 <!--组件逻辑-->
 <script lang="ts">
-  import ttzx from "@/page/zhuxue/util/show";
   export default {
     data() {
       return {
@@ -38,7 +37,7 @@
     },
     methods:{
       tt() {
-        console.log(ttzx);
+
       }
     }
   }
