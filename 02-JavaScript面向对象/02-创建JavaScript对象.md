@@ -90,7 +90,7 @@ function New(func) {
 
   res.__proto__ = func.prototype // 将实例的原型指向构造函数的原型
 
-  // ret为构造函数的执行结果，将构造函数内部的htis指向res实例对象
+  // ret为构造函数的执行结果，将构造函数内部的this指向res实例对象
   var ret = func.apply(res, Array.prototype.slice.call(arguments, 1))
 
   if ((typeof ret === 'object' || typeof ret === 'function') && ret !== null) {

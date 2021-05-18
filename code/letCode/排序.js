@@ -11,7 +11,6 @@
  *
  */
 
-
 var merge = function ( intervals ) {
   let operator  = intervals
   // 先快速排序，按照区间左边值排序；
@@ -39,6 +38,8 @@ var merge = function ( intervals ) {
   return result;
 
 };
+
+
 
 /***
  *  快速排序的实现；

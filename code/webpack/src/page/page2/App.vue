@@ -1,6 +1,9 @@
 <!--渲染模版-->
 <template>
   <h1>{{ msg }}</h1>
+  <div class="content">
+    li.item*5
+  </div>
 </template>
 
 <!--样式描述-->

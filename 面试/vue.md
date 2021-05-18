@@ -8,6 +8,14 @@
 ###vue响应式原理：
 
 
+###vuex:
+####1.vuex里mutation里面可以修改state 值，为什么一定设置action 
+    因为vuex里面action 可以处理异步操作，以及在多重mutionation中修改state;
+
+    
+  
+
+
 
                     
     
